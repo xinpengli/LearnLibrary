@@ -1,0 +1,3 @@
+进入pom，右键-diagrams-show dependces-右键搜索jar包名字-artifactId（jar包名字）groupId(组id)
+
+当依赖冲突时，需要查看日志，提示多个相同依赖，然后搜索-排除exclude

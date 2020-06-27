@@ -1,0 +1,157 @@
+全局搜索 shift+shift
+
+1设置背景颜色；file-settings-editor-color scheme 选择scheme d黑色，或默认
+2.设置代码块的竖线
+
+--下载pom中外部依赖包和文档，右键pom文档-maven-下载
+ 这样就可以定位方法的调用关系
+
+
+ctrl+alt+空格 提示輸入信息
+ctrl+alt +方向左（返回上次查看的地方back，）右向后forwards
+
+
+eclipse-右键项目-build path -configure buid path -library-选中jre-edit-Alternat jre,选择
+
+--tomcat
+run-edit configration-点击+号，tomcat server local
+
+
+
+--jdk
+file-project stuctrue-sdk
+
+--删项目
+ Remove Module逻辑删除，物理文件还在，2关闭项目，手动删除
+ 
+ --新建项目
+ file-new-project-maven-勾选模版，输入quickstart
+--
+alt +F12 打开terminal 命令git
+--
+help-find action -输入maven project
+    本地变化show local change ,右击操作
+    project视图，
+  --
+ ctrl +n   打开class  前后模糊查询
+ 
+ ctrl +e  访问最近打开的
+ shift 双击 打开任意文件
+ --alt+shift+ F9 调试，f10run
+ --
+  断点禁用使用，左侧栏右键
+  --打开pom文件，mavaen
+  file-open
+ 
+ alt +f8       断点看表达式变量，选择按键 或按住alt 单机表达式
+ 
+ ctrl+空格，输入类名前半部，会出现模糊下拉框选择   ，alt+/
+ --包依赖图
+ ctr+alt+shift+u
+-- 
+ alt+f7 ,光标定位到变量，类，方法，然后按组合键，可以搜到再所有项目出现的地方
+ --
+ ctrl+q 快速查看方法引入类或方法的定义  光标定位，可以查看任何变量定义，
+ Ctrl + Shift + Enter 如if，do-while，try-catch，return
+ if ()  
+按键完成if语法的输入 {}
+--
+ ctrl +F12 ,在当前文件中按，出现当前类的成员变量列表，输入名子就可精确定位
+ 
+ shift + F6 您可以轻松地重命名您的类，方法和变量，并自动更正所有使用它们的位置。
+ 
+ Alt + Insert   在编辑器中使用Alt + Insert（代码|生成），您可以轻松地为类的任何字段生成getter和setter方法
+ 
+  
+ 
+ 速度搜索，定位到项目视图，随便模糊查询各种文件
+ --
+
+ 
+ Ctrl + Alt + T 选中代码变短，可以加异常捕捉，if,循环，选择相应的即可
+ 
+ Ctrl+Shift+空格:     在new后按，可以快速完成代码编写
+ 
+  Ctrl+Alt+V   直接初始化后，按这个键，会重新定义初始化类，使代码完整 
+  set(new point(1,2) )    变成  point aa=new pointnew point(1,2) set(aa)
+  
+   Ctrl+Shift+空格--------------------------------------------
+ 当您需要将表达式值强制转换为所需类型时，SmartType代码完成将为您提供帮助。 例如，键入String s = (<caret is here>?
+      press Ctrl+Shift+空格 to see what happens.
+ 
+
+ 
+ Ctrl + Shift + Backspace
+ 导航|上次编辑位置）将您带回到您在代码中进行更改的最后位置。
+ -- 查找替换
+   Ctrl + Shift + r 查找替换
+   Ctrl + Shift + f 查找
+ -- 查询当前文件目录位置
+    alt+F1
+ --查询方法被调用的地方
+   alt+F7（右键finduse）
+ -- 断点看表达式变量，选择按键 或按住alt 单机表达式  
+     alt +f8 
+ -- 查询接口实现方法
+  Ctrl  + alt+B
+  
+ -- 查看上次看过的地方，
+ 
+   Ctrl  + alt+方向前后键
+ -- 快速打开类
+    Ctrl+N
+--打开最近文件	
+   ctrl +e
+--复制当前行
+	ctrl+d
+   
+-- 查看当前类所有变量
+    ctrl+f12	
+ --快速打开文件
+    Ctrl+SHIF +N
+-- 自动补全代码	
+ Ctrl+Shift+空格: 
+ 
+ 
+--断点
+	 F8            Step Over 相当于eclipse的f6      跳到下一步
+	F7            Step Into 相当于eclipse的f5就是  进入到代码
+	Alt+shift+F7  Force Step Into 这个是强制进入代码
+	Shift+F8      Step Out  相当于eclipse的f8跳到下一个断点，也相当于eclipse的f7跳出函数
+	Atl+F9        Run To Cursor 运行到光标处
+	ctrl+shift+F9   debug运行java类
+	ctrl+shift+F10  正常运行java类
+	alt+F8          debug时选中查看值 
+	 
+-- sout
+输入syso快捷
+
+--查看返回值类型 
+ 选中ctrl＋q
+ 
+--未引入类报错
+   ctrl+enter 引入需要的包
+-- 异常
+  Ctrl + Alt + T 选中代码变短，可以加异常捕捉，if,循环，选择相应的即可
+--整理代码
+
+    Ctrl + Alt + L
+-- 全局搜索	
+	ctrl+shift+F 
+  
+--撤销 
+ctrl +z 
+
+ctrl+ shift  +z 反撤销
+-- 重命名类，方法，并自动改变引用位置
+ shift + F6
+-- main 方法快捷
+psvm 单词缩写
+--跳行
+ctrl+g
+-- 查看子接口
+ctrl+h
+
+--在方法输入参数a（类型为map）后，
+alt+enter，自动新建map《string,string》 a
+--查看类的依赖关系
