@@ -1,0 +1,31 @@
+#/bin/bash
+dir_name=$1
+version_file=/root/.jenkins/scripts_tools/ceshi/version.sh
+
+#OLD_SIZE=`stat -c %s /root/.jenkins/scripts_tools/ceshi/version.conf `
+#sleep 3
+#NEW_SIZE=`stat -c %s  /root/.jenkins/scripts_tools/ceshi/version.conf`
+
+#if [[ "$OLD_SIZE" != "$NEW_SIZE" ]]
+#then 
+#     echo "文件大小发生变化"
+    cd /root/.jenkins/scripts_tools/ceshi/
+    sh -x $version_file acca
+    sh -x $version_file bosideng26
+    sh -x $version_file feiyada-5
+    sh -x $version_file feiyada-7
+    sh -x $version_file fisher
+    sh -x $version_file guoyao
+    sh -x $version_file juanpi
+    sh -x $version_file langyin
+    sh -x $version_file vip10
+    sh -x $version_file warehouse
+    sh -x $version_file lianhua
+     
+#else 
+#     echo "文件大小没有变化"
+#echo "文件已更新"
+#fi
+
+
+
