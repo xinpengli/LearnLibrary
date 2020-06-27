@@ -1,0 +1,86 @@
+-- 从一表插入另一个表，自增列用null值代替就行，其他的是null值就是null值，可以是常量，注意顺序，可以指定列顺序，可以不指定使用默认
+	
+INSERT INTO  t_base_area_item (`id` ,`cell_code`,`location_x`,`location_y`,`logic_id`,`location_z` )SELECT NULL,map.placement_code,NULL,NULL,1,1  FROM t_base_shelf map ;
+
+
+INSERT INTO  t_base_area_item SELECT NULL,map.placement_code,NULL,NULL,1,1  FROM t_base_shelf map ;
+
+-- 插zone表
+
+INSERT INTO  t_map_zone SELECT NULL,map.placement_code,NULL,NULL,1,0,1,1  FROM t_base_shelf map ;
+
+
+-- 触发器 用于在增删该时获取别的表里的数据然后，用于计算自己的表
+DROP TRIGGER IF EXISTS `tri_insert_zone`;
+ 
+CREATE TRIGGER `tri_insert_zone` AFTER INSERT ON `t_map_zone` FOR EACH ROW 
+begin
+-- 定义变量
+DECLARE a INT DEFAULT 0 ;
+-- 使用变量时用@+变量名
+SET @a=1;
+IF(old.zone=5)
+THEN  
+ set new.zone= 1
+ELSE
+set new.zone= old.zone+1  ;
+ 
+end if;
+end
+; 
+
+-- 存储过程，可以实现执行sql,sql包括变量
+DROP PROCEDURE IF EXISTS `test_insert`;
+CREATE PROCEDURE test_insert()
+BEGIN
+-- DECLARE 声明的变量可以直接在存储过程中使用，其他函数或触发器必须用@+变量     set @zon=@zon+1
+DECLARE i INT DEFAULT 1;
+DECLARE ct INT DEFAULT 0;
+DECLARE zon INT DEFAULT 1;
+-- 查处结果赋值给变量
+SELECT COUNT(zone)  INTO ct FROM t_map_zone ;
+
+		WHILE i<ct
+		DO
+				 IF(zon=90)
+				   THEN
+-- id in 后加查询语句时必须，将查出id集合as 字段 ，limit i,j 从第i行查询,总共查询j条
+        UPDATE t_map_zone set zone=zon WHERE id = (SELECT id from (SELECT * FROM t_map_zone ORDER BY id ASC LIMIT i,1) AS tt);
+				      set zon=1;
+				ELSE
+				UPDATE t_map_zone set zone=zon WHERE id = (SELECT id from (SELECT * FROM t_map_zone ORDER BY id ASC LIMIT i,1) AS tt);
+         set zon=zon+1;
+				end if ;
+		  set i=i+1;
+		END WHILE ;
+
+END; 
+
+ -- 执行
+CALL test_insert();
+
+-- 给列加索引就可以提高查询拍讯性能,主键索引
+ALTER TABLE `t_map_zone` ADD PRIMARY KEY ( `id` ) ;
+
+
+
+
+存储过程批量加入休息
+BEGIN
+	#Routine body goes here...
+  DECLARE i,y int ;
+   DECLARE x VARCHAR(16);
+ set i=0;
+set y=57;
+ set x="03650" ;
+
+
+# CAST(expr AS type) 将表达式转化为对应类型SIGNED 为整数
+#CONCAT(str1,str2,...) 字符串拼接
+  WHILE i <30 do
+  INSERT INTO `athena`.`t_base_functional_cell`  VALUES (NULL,CONCAT(x,y,'5'), NULL, NULL, NULL, 'REST_CELL', NULL, NULL,NULL, NULL);
+ set i= i+1;
+ set y=y-1;
+end  WHILE;
+
+END
