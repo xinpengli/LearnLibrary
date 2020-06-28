@@ -1,0 +1,243 @@
+ cmd 命令
+
+dir 显示当前目录下所有文件
+-- 进入文件夹
+  cd 文件夹名  cd C:\Atoutest\rms3.02\geektest-athena
+-- 返回上层 
+ cd ..
+-- 返回主目录ECD
+cd C:/
+-----------------------------------------------------
+ --在master 分支上新建分支开发
+ --git 配置快速上传
+ git config --global http.postBuffer 52428800
+ 
+ 
+ 
+ git clone 
+ -- 新建分支并切换到新分支（当前master代码已经复制，或复制当前分支为新的分支）
+ git  checkout -b dev
+ --git 修改分支名
+git branch -m 原名 新
+ -- 提交暂存区
+git add -A .   来一次添加所有改变的文件。注意 -A 选项后面还有一个句点。
+
+   git add . 表示添加新文件和编辑过的文件不包括删除的文件; 
+   git add -u    表示编辑或者删除的文件，不包括新添加的文件
+--查看提交的情况
+git status
+   --提交 -m加注释
+   git commit -m "add feature vulcan"
+--查看提交的哈希值，sd55fa65ds54af
+git log
+ --新建分支推送到远程
+   git branch dev
+   git push origin deva'h't
+强制退，發生衝突時
+ git push -u origin dev -f
+   --push 指定分支
+   git push <远程主机名> <本地分支名>:<远程分支名>,省略远程分支名代表与远程分支名一样，如果远程没有则新建
+    git push origin   dev 
+
+-- git 删除没有加入缓存区git add的修改，新增，
+删除目录。文件
+git clean -df  如果新加的文件已经stage 了，先用 git reset HEAD 1.txt,  全部加"."恢复成没有加入缓存区 reset只恢复缓存区之前的修改，在运行git clean -n 确认删除的文件，git clean -df 1.xml  ,删除全部git clean -df
+
+---------------------------------------------------------------------
+--git放弃修改
+
+一，
+
+未使用 git add 缓存代码时。
+
+可以使用 git checkout -- filepathname (比如： git checkout -- readme.md  ，不要忘记中间的 “--” ，不写就成了检出分支了！！)。放弃所有的文件修改可以使用 git checkout .  命令。
+
+此命令用来放弃掉所有还没有加入到缓存区（就是 git add 命令）的修改：内容修改与整个文件删除。但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于git是未知的。自己手动删除就好了。
+
+ 
+
+二，
+
+已经使用了  git add 缓存了代码。
+
+可以使用  git reset HEAD filepathname （比如： git reset HEAD readme.md）来放弃指定文件的缓存，放弃所以的缓存可以使用 git reset HEAD . 命令。
+
+此命令用来清除 git  对于文件修改的缓存。相当于撤销 git add 命令所在的工作。在使用本命令后，本地的修改并不会消失，而是回到了如（一）所示的状态。继续用（一）中的操作，就可以放弃本地的修改。
+
+ 
+
+三，
+
+已经用 git commit  提交了代码。
+
+可以使用 git reset --hard HEAD^ 来回退到上一次commit的状态。此命令可以用来回退到任意版本：git reset --hard  commitid 
+
+你可以使用 git log 命令来查看git的提交历史。git log 的输出如下,之一这里可以看到第一行就是 commitid：
+
+----------------------------------------------------------------
+git merge命令用于合并指定分支到当前分支,合并branch1到当前分支
+git merge branch1
+
+--合并
+1、分支合并到主干
+1.进入分支，更新分支代码 
+ （branch）git pull；
+2.切换主干 
+ （branch）git checkout master；
+3.在主干上合并分支branch 
+（master）git merge branch –squash
+4.提交合并后的代码 
+ （master）git commit -m ‘合并备注’
+5.将代码推送到远程仓库 
+ （master）git push
+
+2、主干合并到分支
+1.进入主干，更新主干代码 
+ （master）git pull；
+2.切换分支 
+ （master）git checkout branch；
+3.在分支上合并主干 
+ （branch）git merge master –squash
+4.提交合并后的代码 
+ （branch）git commit -m ‘合并备注’
+5.将代码推送到远程仓库 
+ （branch）git push
+
+四.查看提交tag分支
+--切换
+git checkout tag
+--查看标签
+$ git tag
+--查看标签版本信息
+$ git show v0.1.0
+--补打标签
+
+给指定的commit打标签
+
+$ git tag -a v0.1.0 49e0cd22f6bd9510fe65084e023d9c4316b446a6
+发布标签
+
+--将v0.1.0标签提交到git服务器
+
+$ git push origin v0.1.0
+
+-- 回退版本
+首先要回退本地分支：
+git 
+
+git reset --hard Obfafd 
+
+紧接着强制推送到远程分支：
+
+git push -f
+
+
+--git log    q 回车退出 倒序排列查看版本号
+
+查看所有分支提交历史 有commitid ，
+git show commitid  /tag名 查看某个提交的修改内容
+
+git log --author lixinpeng 查看某个人提交历史
+
+git log -p --文件名相对路径
+
+
+git diff --cached 比较本地缓存区与本地最新版本的代码差异
+
+
+
+
+
+mvn clean complie -U- X
+
+----本地新建仓库推送原创
+1、创建本地仓库
+
+git init //观察发现，当前目录增加.git目录
+2、把文件添加到暂存区
+
+git add file
+git add dir/*
+git status //查看文件状态
+3、若误提交，删除暂存区文件
+
+git rm --cache file
+4、将暂存区文件提交到工作区
+
+git commit -m "注释"
+5、添加远程仓库（远程仓库需要先创建）
+
+git remote add origin 远程仓库地址 （建议用ssh快）//将当前仓库与远程仓库关联(远程需要有存在的仓库)，且远程仓库alias为origin
+git remote -v 查看当前远程连接
+git remote remove origin    (删origin即可)删除远程连接
+git remote //查看本地仓库关联的远程仓库
+6、将本项目推送到远程仓库
+
+git push -u origin localbranch
+
+------删除本地远程分支
+
+-- 查看本地分支
+git branch 
+---可以删除远程分支Chapater6
+ git push origin --delete Chapater6      
+
+        。
+
+--删除本地分支（先切換到其他分支）
+ git branch -D Chapater8 可以删除本地分支（在主分支中）
+--放弃本地修改，强制检出分支代码
+git checkout -f branch /commitid 
+
+
+没有提交时可以保存现场，
+git stash
+
+恢复现场
+git stash pop
+--修改提交缓存大小500M，（单位为比特bit）否则大文件无法提交
+git config --global http.postBuffer 524288000
+
+--最好指明从远程拉取
+git pull origin branch
+
+--在分支上回到某个提交
+git reset --hard commitid
+
+-----------------各种撤回commit ,add ,删除新增文件
+
+
+1. 查看日志 
+
+　　git log
+
+2. 此时如果想撤销commit，同时保留git add
+
+　　git reset --soft HEAD^
+
+3. 删除工作空间改动代码，撤销commit，撤销git add
+
+　　git reset --hard HEAD^
+
+4. 不删除工作空间改动代码，撤销commit，并且撤销git add(常用)
+
+　　git reset --mixed HEAD^ 或者git reset HEAD^
+
+5. 推到远程
+
+　　git push -f
+
+6. 如果只想修改下git commit 的注释内容
+
+　　git commit --amend
+
+7. 还没git commit ，只撤销git add，此时会保留本地修改（绿字变红字）
+
+　　git reset HEAD filename
+
+　　全部：git reset HEAD
+
+8. 不想保留本地修改
+
+　　git checkout filename
+-------------------------------

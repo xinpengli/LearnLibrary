@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.geekplus</groupId>
+    <artifactId>athena-aggregation</artifactId>
+    <version>3.3.4-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <!-- 聚合 -->
+    <modules>
+        <module>./athena-parent</module>
+        <module>./athena-common</module>
+        <module>./athena-facade</module>
+        <module>./athena-config</module>
+        <module>./athena-api</module>
+        <module>./athena-core</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <maven.test.skip>true</maven.test.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+    </properties>
+
+    <!-- nexus maven私服 @author 刘俊 @date 2016年4月19日 -->
+    <!-- 内部包发布 -->
+    <distributionManagement>
+        <repository>
+            <id>nexus-release</id>
+            <url>http://nexus.geekplus.cc:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://nexus.geekplus.cc:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!-- 中央仓库 -->
+    <repositories>
+        <repository>
+            <id>nexus-public</id>
+            <name>Public Repository of GeekPlus</name>
+            <url>http://nexus.geekplus.cc:8081/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-plugin</id>
+            <name>Public PluginRepository of GeekPlus</name>
+            <url>http://nexus.geekplus.cc:8081/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>

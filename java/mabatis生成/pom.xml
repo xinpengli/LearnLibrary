@@ -1,0 +1,36 @@
+ 
+ <build>/<plugins>下写入
+ 
+ <!-- mybatis-generator myba-->
+			<!--<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>${version.mybatis-generator}</version>
+				<dependencies>
+
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${version.mysql}</version>
+
+					</dependency>
+				</dependencies>
+				<configuration>
+				<!-- 配置generatorConfig位置-->
+					<configurationFile>src/main/resources/config/mybatis-generator/generatorConfig.xml</configurationFile>
+					&lt;!&ndash;允许移动生成的文件&ndash;&gt;
+					<verbose>true</verbose>
+					&lt;!&ndash;允许覆盖生成的文件&ndash;&gt;
+					<overwrite>true</overwrite>
+				</configuration>
+				&lt;!&ndash; 自动生成 &ndash;&gt;
+				<executions>
+					<execution>
+						<id>Generate MyBatis Artifacts</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+
+					</execution>
+				</executions>
+			</plugin>-->

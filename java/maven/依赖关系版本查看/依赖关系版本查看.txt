@@ -1,0 +1,1 @@
+pom中选中artifactId中的名字，右键-Diagrams-show Dependcies

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>com.geekplus</groupId>
+        <artifactId>athena-parent</artifactId>
+        <version>3.4.5-SNAPSHOT</version>
+        <relativePath>../athena-parent/pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>athena-api</artifactId>
+    <packaging>jar</packaging>
+    <name>athena-api</name>
+
+    <dependencies>
+        <!-- 引入common -->
+        <dependency>
+            <groupId>com.geekplus</groupId>
+            <artifactId>athena-common</artifactId>
+        </dependency>
+        <!-- 引入facade -->
+        <dependency>
+            <groupId>com.geekplus</groupId>
+            <artifactId>athena-facade</artifactId>
+        </dependency>
+        <!-- 引入config -->
+        <dependency>
+            <groupId>com.geekplus</groupId>
+            <artifactId>athena-config</artifactId>
+        </dependency>
+        <!-- 引入ha -->
+        <dependency>
+            <groupId>com.geekplus</groupId>
+            <artifactId>athena-ha</artifactId>
+            <version>3.4.5-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

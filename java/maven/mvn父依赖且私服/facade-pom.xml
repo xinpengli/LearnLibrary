@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<parent>
+		<groupId>com.geekplus</groupId>
+		<artifactId>athena-parent</artifactId>
+		<version>3.1.8-SNAPSHOT</version>
+		<relativePath>../athena-parent/pom.xml</relativePath>
+	</parent>
+
+	<!-- athena融入多层后会将athena-facade改为3.1.0-release -->
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>athena-facade</artifactId>
+	<version>3.1.8-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>athena-facade</name>
+
+	<dependencies>
+		<!-- 引入common -->
+		<dependency>
+			<groupId>com.geekplus</groupId>
+			<artifactId>athena-common</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+
+		<!-- common-i18n -->
+		<dependency>
+			<groupId>com.geekplus</groupId>
+			<artifactId>optimus-tool-i18n-core</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<configuration>
+					<attach>true</attach>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

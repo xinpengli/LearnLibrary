@@ -1,0 +1,44 @@
+ctrl +o 显示当前类所有方法
+
+ctrl +shift+g 当前方法被调用的地方
+
+ctrl +shift+f 整理代码
+
+ctrl +L  go to line
+
+抽象類不能实例化，
+右键查看点击  open type hierarchy  被谁继承
+
+ 
+上一个/下一个光标的位置：Alt+Left/Right 
+上一个/下一个成员（成员对象或成员函数）：Ctrl+Shift+Up/Down
+
+2.2文件内定位 
+跳到某行：Ctrl+L
+上下滚屏：Ctrl+Up/Down
+上一个/下一个成员（成员对象或成员函数）：Ctrl+Shift+Up/Down
+快速Outline：Ctrl+O 
+2.3跨文件定位 
+打开声明：F3
+打开资源：Ctrl+Shift+R
+打开类型：Ctrl+Shift+T
+在workspace中搜索选中元素的声明：Ctrl+G
+在workspace中搜索选中的文本：Ctrl+Alt+G
+在workspace中搜索选中元素的引用：Ctrl+Shift+G
+打开调用层次结构：Ctrl+Alt+H
+快速层次结构：Ctrl+T
+反悔：Ctrl+Z
+
+
+
+选中到行末/行首：Shift+End/Home
+选中上一个/下一个单词：Ctrl+Shift+Left/Right
+
+
+显示快捷键帮助：Ctrl+Shift+L	
+
+
+
+
+
+

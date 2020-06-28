@@ -1,0 +1,8 @@
+复制本文件夹到config目录有2个文件分别
+1.mybatis_generator配置数据库，生成文件存放位置的变量
+2.主要配置生成dao(tablenamemapper.java,,sql servie),entity(table.java  &tableExample.java)，对应dao层java文件的sql语句xml位置，以及要生成的表对象配置
+3.在主配置pom引入生成插件依赖。见pom.xml
+4.右键pom文件》run as >maven build  弹出框在goals写入mybatis-generator:generate，点击run
+
+*若是idal 在 maven buid 工具>Plugins>mybatis-generator>mysbatis-generator:generate*点击
+
