@@ -1,0 +1,5 @@
+MonitorChannelHandler
+
+
+2配置类加载.property文件中的对应的服务:application-netty.properties
+NettyServerConfiguration

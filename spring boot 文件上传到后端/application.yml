@@ -1,0 +1,31 @@
+logging:
+  config: classpath:config/log/log4j2.xml
+server.:
+  port: 61001
+  servlet.:
+    context-path: /athenatest
+
+spring:
+  datasource:
+      name: athena
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/zhousheng_athena3.2?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: Qq123456
+      type: com.alibaba.druid.pool.DruidDataSource
+      connectionProperties: druid.stat.mergeSql=true
+  task:
+      pool:
+        max-threads: 25
+        queue-capacity: 100
+        keep-alive: 10s
+  servlet:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 1000Mb
+
+# 根据地圖解析模式初始化货架，Databse,Xml,NOShelfArea ,null
+map.resolver:
+
+
+

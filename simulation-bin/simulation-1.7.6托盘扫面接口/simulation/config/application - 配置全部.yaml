@@ -1,0 +1,93 @@
+server:
+    # 端口号
+    port: 8884
+    servlet:
+        context-path: /simulation
+spring:
+    application:
+        name: athena-simulation
+simulation:
+    # 服务器IP地址
+    serverIp: "172.16.42.205"
+    # 服务器端口号
+    port: 8899
+    # 充电站端口号
+    chargerPort: 8898
+    # 起始的机器人ID 默认+1
+    startId: 1003
+    # 初始机器人电量
+    power: 90
+    # 初始机器人角度
+    angle: 0
+    # 机器人类型，支持P，M与F，F表示叉车
+    type: "P"
+    #配置数量
+#   # 批量添加机器人 num表示数量，x表示初始的X坐标，y表示初始的Y坐标，cellCode优先，使用cellCode会向服务器请求地图数据（非标二维码地图模式支持）
+    #  space为0表示在X轴方向放置机器人，spaceNumber表示机器人之间的间隔距离
+    #  space为1表示在Y轴方向放置机器人，spaceNumber表示机器人之间的间隔距离    
+    #  多楼层时使用二维码，几楼就用几楼的二维码
+    batchs:
+            -   num: 4
+                cellCode: 5850555
+                space: 0
+                spaceNumber: 10
+            # -   num: 0
+                # x: 9.775
+                # y: 33.075
+                # space: 0
+                # spaceNumber: 1.15
+    # 单个添加
+    # robots:
+             # - x: 
+               # y:
+            
+             
+    
+
+             
+
+
+
+
+
+
+
+#            - x: 15.6
+#              y: 22.1
+#              type: "F"
+#            - x: 11.38
+#              y: 19.14
+#              type: "F"
+#              angle: 270
+#            - x: 15.6
+#              y: 18.07
+#              type: "F"
+#              angle: 90
+#            - x: 13.248
+#              y: 24.223
+#              type: "F"
+#              angle: 180
+#            - x: 13.248
+#              y: 24.223
+#              type: "F"
+#              angle: 180
+#
+#            - x: 13.248
+#              y: 24.223
+#              type: "F"
+#              angle: 180
+#            - x: 13.248
+#              y: 24.223
+#              type: "F"
+#              angle: 180
+#            - x: 13.248
+#              y: 24.223
+#              type: "F"
+#              angle: 180
+#            - x: 13.248
+#              y: 24.223
+#              type: "F"
+#              angle: 180
+
+
+

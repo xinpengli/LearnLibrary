@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+	<properties>
+		<property name="LOG_HOME">/var/log/geekplus/tomcat-rms/athena-simulation/
+		</property>
+	</properties>
+
+	<Appenders>
+		<!-- 注释Console -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss:SSS} %p [%t][%c{1}] - %m%n" />
+		</Console>
+
+		<!-- RMS业务日志 -->
+		<RollingFile name="RollingFile"
+			fileName="${LOG_HOME}/simulation.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/simulation-%d{yyyy-MM-dd-HH}-%i.log.gz"
+			immediateFlush="false">
+
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss:SSS} %p [%t][%c{1}] - %m%n</Pattern>
+			</PatternLayout>
+
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="150 MB" />
+			</Policies>
+		</RollingFile>
+
+
+	</Appenders>
+
+	<Loggers>
+		<asyncRoot level="info" includeLocation="true" >
+			<AppenderRef ref="RollingFile" />
+			<AppenderRef ref="Console" />
+		</asyncRoot>
+
+	</Loggers>
+
+</Configuration>
