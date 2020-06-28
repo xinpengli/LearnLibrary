@@ -1,0 +1,68 @@
+nmon -f -t -s 10 -c 2000
+nmon -f -t -s 2 -c 3600
+nmon -f -t -s 2 -c 1800
+
+nmon -f -t -s 2 -c 21600    12小时
+nmon -f -t -s 5 -c 1440
+查看nmon 进程
+ ps -ef |grep  nmon
+杀进程
+kill -9 pid
+
+service nmon restart
+
+
+
+查找文件，模糊查询*开头时需要转义，*前加\,，就不会报  “find: 路径必须在表达式之前:”
+find / -name \*.nmon
+删除文件
+rm -f  *.nmon
+
+---------------------
+实时监控cpu,内存，硬盘读写，网络
+nmon 
+c  m   d     n
+  按q推出
+  
+  
+
+  
+  
+  日常补货建议定时任务用时
+  
+  日常补货单定时任务用时
+  1
+  1下载安装 nmon Analyser（分析linux nmon 文件转换）
+  https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/Power+Systems/page/nmon_analyser
+  2
+  
+  结果分析
+  IO/sec  读写速度
+  代表 每秒进行IO的次数，反应了系统的响应能力
+  
+  
+  
+  --查看系统信息
+  --os
+  cat /etc/redhat-release
+      CentOS Linux release 7.4.1708 (Core)
+  --CPU
+1. 查看物理CPU的个数
+#cat /proc/cpuinfo |grep "physical id"|sort |uniq|wc -l
+ 
+2. 查看逻辑CPU的个数(一般写这个）
+	#cat /proc/cpuinfo |grep "processor"|wc -l
+	
+	16
+ 
+3. 查看CPU是几核
+#cat /proc/cpuinfo |grep "cores"|uniq
+ 
+4. 查看CPU的主频
+#cat /proc/cpuinfo |grep MHz|uni
+  --内存  MEMORY
+  cat /proc/meminfo | grep MemTotal
+  16266204kb 除以1000、1000   16g
+
+nohup java -jar server.jar &
+ 
